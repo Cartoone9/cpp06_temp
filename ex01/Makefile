@@ -6,7 +6,7 @@
 #    By: niroy <niroy@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/11 22:11:33 by jramiro           #+#    #+#              #
-#    Updated: 2025/09/15 20:49:30 by jramiro          ###   ########.fr        #
+#    Updated: 2025/09/15 21:07:53 by jramiro          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ INCS = -I./hdrs
 
 SRCS = srcs/main.cpp \
 	   \
+	   srcs/Serializer.class.cpp \
 
 O_DIR = .objs
 OBJS = $(SRCS:%.cpp=$(O_DIR)/%.o)

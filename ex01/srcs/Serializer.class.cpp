@@ -6,7 +6,7 @@
 /*   By: jramiro <jramiro@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 20:51:29 by jramiro           #+#    #+#             */
-/*   Updated: 2025/09/15 20:52:20 by jramiro          ###   ########.fr       */
+/*   Updated: 2025/09/15 21:36:26 by jramiro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,16 @@ Serializer::~Serializer()
 
 // ----------------------------------------
 // methods --------------------------------
+
+uintptr_t	Serializer::serialize(Data* ptr)
+{
+	return (reinterpret_cast<uintptr_t>(ptr));
+}
+
+Data*		Serializer::deserialize(uintptr_t raw)
+{
+	return (reinterpret_cast<Data*>(raw));
+}
 
 // methods --------------------------------
 // ----------------------------------------
