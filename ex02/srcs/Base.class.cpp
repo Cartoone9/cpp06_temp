@@ -6,7 +6,7 @@
 /*   By: jramiro <jramiro@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 22:03:40 by jramiro           #+#    #+#             */
-/*   Updated: 2025/09/15 22:40:35 by jramiro          ###   ########.fr       */
+/*   Updated: 2025/09/16 00:00:26 by jramiro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,7 @@ Base*	Base::generate(void)
 
 void	Base::identify(Base* p)
 {
-	// TODO 
-	// Idk if that works
-	Base*	check;
+	Base*	check = NULL;
 
 	check = dynamic_cast<A*>(p);
 	if (check != NULL)
@@ -79,14 +77,34 @@ void	Base::identify(Base* p)
 
 void	Base::identify(Base& p)
 {
-	// TODO 
-	// that's bad
-	if (dynamic_cast<A>(p) != NULL)
+	try
+	{
+		dynamic_cast<A&>(p);
 		std::cout << "Ref identified as A" << std::endl;
-	else if (dynamic_cast<B>(p) != NULL)
-		std::cout << "Ref identified as B" << std::endl;
-	else if (dynamic_cast<C>(p) != NULL)
-		std::cout << "Ref identified as C" << std::endl;
+		return;
+	}
+	catch (const std::exception& e)
+	{
+		try
+		{
+			dynamic_cast<B&>(p);
+			std::cout << "Ref identified as B" << std::endl;
+			return;
+		}
+		catch (const std::exception& ex)
+		{
+			try
+			{
+				dynamic_cast<C&>(p);
+				std::cout << "Ref identified as C" << std::endl;
+				return;
+			}
+			catch (const std::exception& exc)
+			{
+				std::cout << "Ref is invalid" << std::endl;
+			}
+		}
+	}
 }
 
 // methods --------------------------------

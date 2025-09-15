@@ -6,13 +6,14 @@
 /*   By: jramiro <jramiro@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 22:01:45 by jramiro           #+#    #+#             */
-/*   Updated: 2025/09/15 22:31:01 by jramiro          ###   ########.fr       */
+/*   Updated: 2025/09/15 23:56:03 by jramiro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BASE_CLASS_HPP
 #define BASE_CLASS_HPP
 
+#include <exception>
 #include <cstdlib>
 #include <ctime>
 #include <iostream>
