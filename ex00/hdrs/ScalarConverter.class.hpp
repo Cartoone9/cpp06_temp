@@ -6,7 +6,7 @@
 /*   By: jramiro <jramiro@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/14 17:25:42 by jramiro           #+#    #+#             */
-/*   Updated: 2025/09/15 19:44:09 by jramiro          ###   ########.fr       */
+/*   Updated: 2025/09/15 20:18:20 by jramiro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 #include <iostream>
 #include <limits>
 #include <string>
+#include "colors.hpp"
 
 class ScalarConverter
 {

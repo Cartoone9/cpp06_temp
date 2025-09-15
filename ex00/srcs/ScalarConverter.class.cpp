@@ -6,7 +6,7 @@
 /*   By: jramiro <jramiro@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/14 18:37:57 by jramiro           #+#    #+#             */
-/*   Updated: 2025/09/15 20:07:56 by jramiro          ###   ########.fr       */
+/*   Updated: 2025/09/15 20:39:41 by jramiro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,10 @@ ScalarConverter::~ScalarConverter()
 
 static void	convertError()
 {
-	std::cout << "char: impossible" << std::endl;
-	std::cout << "int: impossible" << std::endl;
-	std::cout << "float: impossible" << std::endl;
-	std::cout << "double: impossible" << std::endl;
+	std::cout << TEAL "char: " RESET << "impossible" << std::endl;
+	std::cout << BLUE "int: " RESET << "impossible" << std::endl;
+	std::cout << PURPLE "float: " RESET << "impossible" << std::endl;
+	std::cout << MAGENTA "double: " RESET << "impossible" << std::endl;
 }
 
 static void	convertInt(const std::string& input)
@@ -69,32 +69,32 @@ static void	convertInt(const std::string& input)
 
 	// char
 	if (inputInt < 0 || inputInt > 127)
-		std::cout << "char: impossible" << std::endl;
+		std::cout << TEAL "char: " RESET << "impossible" << std::endl;
 	else if (!std::isprint(inputChar))
-		std::cout << "char: non displayable" << std::endl;
+		std::cout << TEAL "char: " RESET << "non displayable" << std::endl;
 	else
-		std::cout << "char: " << inputChar << std::endl;
+		std::cout << TEAL "char: " RESET << inputChar << std::endl;
 
 	// int
 	if (inputInt > std::numeric_limits<int>::max()
 		|| inputInt < std::numeric_limits<int>::min())
-		std::cout << "int: impossible" << std::endl;
+		std::cout << BLUE "int: " RESET << "impossible" << std::endl;
 	else
-		std::cout << "int: " << inputInt << std::endl;
+		std::cout << BLUE "int: " RESET << inputInt << std::endl;
 
 	// float
 	if (static_cast<float>(inputInt) > std::numeric_limits<float>::max()
 		|| static_cast<float>(inputInt) < -std::numeric_limits<float>::max())
-		std::cout << "float: impossible" << std::endl;
+		std::cout << PURPLE "float: " RESET << "impossible" << std::endl;
 	else
-		std::cout << "float: " << static_cast<float>(inputInt) << ".0f" << std::endl;
+		std::cout << PURPLE "float: " RESET << static_cast<float>(inputInt) << ".0f" << std::endl;
 
 	// double
 	if (static_cast<double>(inputInt) > std::numeric_limits<double>::max()
 		|| static_cast<double>(inputInt) < -std::numeric_limits<double>::max())
-		std::cout << "double: impossible" << std::endl;
+		std::cout << MAGENTA "double: " RESET << "impossible" << std::endl;
 	else
-		std::cout << "double: " << static_cast<double>(inputInt) << ".0" << std::endl;
+		std::cout << MAGENTA "double: " RESET << static_cast<double>(inputInt) << ".0" << std::endl;
 }
 
 static void	convertDouble(const std::string& input)
@@ -112,25 +112,25 @@ static void	convertDouble(const std::string& input)
 
 	// char
 	if (inputDouble < 0.0 || inputDouble > 127.0)
-		std::cout << "char: impossible" << std::endl;
+		std::cout << TEAL "char: " RESET << "impossible" << std::endl;
 	else if (!std::isprint(inputChar))
-		std::cout << "char: non displayable" << std::endl;
+		std::cout << TEAL "char: " RESET << "non displayable" << std::endl;
 	else
-		std::cout << "char: " << inputChar << std::endl;
+		std::cout << TEAL "char: " RESET << inputChar << std::endl;
 
 	// int
 	if (inputDouble > static_cast<double>(std::numeric_limits<int>::max())
 		|| inputDouble < static_cast<double>(std::numeric_limits<int>::min()))
-		std::cout << "int: impossible" << std::endl;
+		std::cout << BLUE "int: " RESET << "impossible" << std::endl;
 	else
-		std::cout << "int: " << static_cast<int>(inputDouble) << std::endl;
+		std::cout << BLUE "int: " RESET << static_cast<int>(inputDouble) << std::endl;
 
 	bool full = false;
 	if (inputDouble == static_cast<int>(inputDouble))
 		full = true;
 
 	// float
-	std::cout << "float: " << static_cast<float>(inputDouble);
+	std::cout << PURPLE "float: " RESET << static_cast<float>(inputDouble);
 
 	if (full == true)
 		std::cout << ".0f" << std::endl;
@@ -138,7 +138,7 @@ static void	convertDouble(const std::string& input)
 		std::cout << "f" << std::endl;
 
 	// double
-	std::cout << "double: " << inputDouble;
+	std::cout << MAGENTA "double: " RESET << inputDouble;
 
 	if (full == true)
 		std::cout << ".0" << std::endl;
@@ -162,25 +162,25 @@ static void	convertFloat(const std::string& input)
 
 	// char
 	if (inputFloat < 0.0f || inputFloat > 127.0f)
-		std::cout << "char: impossible" << std::endl;
+		std::cout << TEAL "char: " RESET << "impossible" << std::endl;
 	else if (!std::isprint(inputChar))
-		std::cout << "char: non displayable" << std::endl;
+		std::cout << TEAL "char: " RESET << "non displayable" << std::endl;
 	else
-		std::cout << "char: " << inputChar << std::endl;
+		std::cout << TEAL "char: " RESET << inputChar << std::endl;
 
 	// int
 	if (inputFloat > static_cast<float>(std::numeric_limits<int>::max())
 		|| inputFloat < static_cast<float>(std::numeric_limits<int>::min()))
-		std::cout << "int: impossible" << std::endl;
+		std::cout << BLUE "int: " RESET << "impossible" << std::endl;
 	else
-		std::cout << "int: " << static_cast<int>(inputFloat) << std::endl;
+		std::cout << BLUE "int: " RESET << static_cast<int>(inputFloat) << std::endl;
 
 	bool full = false;
 	if (inputFloat == static_cast<int>(inputFloat))
 		full = true;
 
 	// float
-	std::cout << "float: " << static_cast<float>(inputFloat);
+	std::cout << PURPLE "float: " RESET << static_cast<float>(inputFloat);
 
 	if (full == true)
 		std::cout << ".0f" << std::endl;
@@ -188,7 +188,7 @@ static void	convertFloat(const std::string& input)
 		std::cout << "f" << std::endl;
 
 	// double
-	std::cout << "double: " << inputFloat;
+	std::cout << MAGENTA "double: " RESET << inputFloat;
 
 	if (full == true)
 		std::cout << ".0" << std::endl;
@@ -248,34 +248,34 @@ static void	convertChar(const std::string& input)
 {
 	unsigned char	inputChar = static_cast<unsigned char>(input[0]);
 
-	if (std::isprint(inputChar))
-		std::cout << "char: " << inputChar << std::endl;
+	if (!std::isprint(inputChar))
+		std::cout << TEAL "char: " RESET << "non displayable" << std::endl;
 	else
-		std::cout << "char: non displayable" << std::endl;
+		std::cout << TEAL "char: " RESET << inputChar << std::endl;
 
-	std::cout << "int: " << static_cast<int>(inputChar) << std::endl;
-	std::cout << "float: " << static_cast<float>(inputChar) << ".0f" << std::endl;
-	std::cout << "double: " << static_cast<double>(inputChar) << ".0" << std::endl;
+	std::cout << BLUE "int: " RESET << static_cast<int>(inputChar) << std::endl;
+	std::cout << PURPLE "float: " RESET << static_cast<float>(inputChar) << ".0f" << std::endl;
+	std::cout << MAGENTA "double: " RESET << static_cast<double>(inputChar) << ".0" << std::endl;
 }
 
 static void	convertSpeFloat(const std::string& input)
 {
 	float	inputFloat = std::strtof(input.c_str(), NULL);
 
-	std::cout << "char: impossible" << std::endl;
-	std::cout << "int: impossible" << std::endl;
-	std::cout << "float: " << inputFloat << "f" << std::endl;
-	std::cout << "double: " << static_cast<double>(inputFloat) << std::endl;
+	std::cout << TEAL "char: " RESET << "impossible" << std::endl;
+	std::cout << BLUE "int: " RESET << "impossible" << std::endl;
+	std::cout << PURPLE "float: " RESET << inputFloat << "f" << std::endl;
+	std::cout << MAGENTA "double: " RESET << static_cast<double>(inputFloat) << std::endl;
 }
 
 static void	convertSpeDouble(const std::string& input)
 {
 	double	inputDouble = std::strtod(input.c_str(), NULL);
 
-	std::cout << "char: impossible" << std::endl;
-	std::cout << "int: impossible" << std::endl;
-	std::cout << "float: " << static_cast<float>(inputDouble) << "f" << std::endl;
-	std::cout << "double: " << inputDouble << std::endl;
+	std::cout << TEAL "char: " RESET << "impossible" << std::endl;
+	std::cout << BLUE "int: " RESET << "impossible" << std::endl;
+	std::cout << PURPLE "float: " RESET << static_cast<float>(inputDouble) << "f" << std::endl;
+	std::cout << MAGENTA "double: " RESET << inputDouble << std::endl;
 }
 
 static int	convertSpe(const std::string& input)
@@ -347,7 +347,3 @@ void	ScalarConverter::convert(const std::string& input)
 
 // operators overload ---------------------
 // ----------------------------------------
-
-
-
-

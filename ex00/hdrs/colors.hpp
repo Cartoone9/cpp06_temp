@@ -6,7 +6,7 @@
 /*   By: jramiro <jramiro@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 14:27:15 by jramiro           #+#    #+#             */
-/*   Updated: 2025/09/07 12:49:06 by jramiro          ###   ########.fr       */
+/*   Updated: 2025/09/15 20:27:50 by jramiro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@
 # define PURPLE "\033[1;38;2;108;86;249m"
 # define MAGENTA "\033[1;38;2;181;51;251m"
 # define VIOLET "\033[1;38;2;204;102;255m"
+# define BLACK "\033[1;38;2;0;0;0m"
+# define WHITE "\033[1;38;2;255;255;255m"
 
 # define BOLD "\033[1m"
 # define UNDERLINE "\033[4m"
