@@ -6,7 +6,7 @@
 /*   By: jramiro <jramiro@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 22:03:40 by jramiro           #+#    #+#             */
-/*   Updated: 2025/09/16 00:00:26 by jramiro          ###   ########.fr       */
+/*   Updated: 2025/09/16 00:19:14 by jramiro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "A.class.hpp"
 #include "B.class.hpp"
 #include "C.class.hpp"
+#include "colors.hpp"
 
 // ----------------------------------------
 // constructors / destructors -------------
@@ -58,19 +59,19 @@ void	Base::identify(Base* p)
 	check = dynamic_cast<A*>(p);
 	if (check != NULL)
 	{
-		std::cout << "Ptr identified as A" << std::endl;
+		std::cout << "Ptr identified as " << TEAL "A" RESET << std::endl;
 		return;
 	}
 	check = dynamic_cast<B*>(p);
 	if (check != NULL)
 	{
-		std::cout << "Ptr identified as B" << std::endl;
+		std::cout << "Ptr identified as " << YELLOW "B" RESET << std::endl;
 		return;
 	}
 	check = dynamic_cast<C*>(p);
 	if (check != NULL)
 	{
-		std::cout << "Ptr identified as C" << std::endl;
+		std::cout << "Ptr identified as " << RED "C" RESET << std::endl;
 		return;
 	}
 }
@@ -80,7 +81,7 @@ void	Base::identify(Base& p)
 	try
 	{
 		dynamic_cast<A&>(p);
-		std::cout << "Ref identified as A" << std::endl;
+		std::cout << "Ref identified as " << TEAL "A" RESET << std::endl;
 		return;
 	}
 	catch (const std::exception& e)
@@ -88,7 +89,7 @@ void	Base::identify(Base& p)
 		try
 		{
 			dynamic_cast<B&>(p);
-			std::cout << "Ref identified as B" << std::endl;
+			std::cout << "Ref identified as " << YELLOW "B" RESET << std::endl;
 			return;
 		}
 		catch (const std::exception& ex)
@@ -96,7 +97,7 @@ void	Base::identify(Base& p)
 			try
 			{
 				dynamic_cast<C&>(p);
-				std::cout << "Ref identified as C" << std::endl;
+				std::cout << "Ref identified as " << RED "C" RESET << std::endl;
 				return;
 			}
 			catch (const std::exception& exc)
