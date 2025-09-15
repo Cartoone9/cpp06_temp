@@ -6,15 +6,17 @@
 /*   By: jramiro <jramiro@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/14 17:25:42 by jramiro           #+#    #+#             */
-/*   Updated: 2025/09/15 18:11:35 by jramiro          ###   ########.fr       */
+/*   Updated: 2025/09/15 19:13:26 by jramiro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SCALARCONVERTER_CLASS_HPP
 #define SCALARCONVERTER_CLASS_HPP
 
+#include <cerrno>
 #include <cstdlib>
 #include <iostream>
+#include <limits>
 #include <string>
 
 class ScalarConverter
