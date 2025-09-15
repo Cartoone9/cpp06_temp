@@ -6,7 +6,7 @@
 /*   By: jramiro <jramiro@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/14 19:58:49 by jramiro           #+#    #+#             */
-/*   Updated: 2025/09/14 20:02:15 by jramiro          ###   ########.fr       */
+/*   Updated: 2025/09/15 19:02:18 by jramiro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	main(int ac, char** av)
 		return (1);
 	}
 
-	ScalarConverter::convert(av[1]);
+	ScalarConverter::convert(static_cast<std::string>(av[1]));
 
 	return (0);
 }
