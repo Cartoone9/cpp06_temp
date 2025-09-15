@@ -6,7 +6,7 @@
 /*   By: jramiro <jramiro@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/14 17:25:42 by jramiro           #+#    #+#             */
-/*   Updated: 2025/09/15 19:13:26 by jramiro          ###   ########.fr       */
+/*   Updated: 2025/09/15 19:44:09 by jramiro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <cerrno>
 #include <cstdlib>
+#include <iomanip>
 #include <iostream>
 #include <limits>
 #include <string>

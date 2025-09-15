@@ -6,7 +6,7 @@
 /*   By: jramiro <jramiro@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/14 18:37:57 by jramiro           #+#    #+#             */
-/*   Updated: 2025/09/15 19:41:21 by jramiro          ###   ########.fr       */
+/*   Updated: 2025/09/15 20:07:56 by jramiro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,15 +83,15 @@ static void	convertInt(const std::string& input)
 		std::cout << "int: " << inputInt << std::endl;
 
 	// float
-	if (inputInt > std::numeric_limits<float>::max()
-		|| inputInt < std::numeric_limits<float>::min())
+	if (static_cast<float>(inputInt) > std::numeric_limits<float>::max()
+		|| static_cast<float>(inputInt) < -std::numeric_limits<float>::max())
 		std::cout << "float: impossible" << std::endl;
 	else
 		std::cout << "float: " << static_cast<float>(inputInt) << ".0f" << std::endl;
 
 	// double
-	if (inputInt > std::numeric_limits<double>::max()
-		|| inputInt < std::numeric_limits<double>::min())
+	if (static_cast<double>(inputInt) > std::numeric_limits<double>::max()
+		|| static_cast<double>(inputInt) < -std::numeric_limits<double>::max())
 		std::cout << "double: impossible" << std::endl;
 	else
 		std::cout << "double: " << static_cast<double>(inputInt) << ".0" << std::endl;
@@ -119,15 +119,31 @@ static void	convertDouble(const std::string& input)
 		std::cout << "char: " << inputChar << std::endl;
 
 	// int
-	if (inputDouble > std::numeric_limits<int>::max() || inputDouble < std::numeric_limits<int>::min())
+	if (inputDouble > static_cast<double>(std::numeric_limits<int>::max())
+		|| inputDouble < static_cast<double>(std::numeric_limits<int>::min()))
 		std::cout << "int: impossible" << std::endl;
 	else
 		std::cout << "int: " << static_cast<int>(inputDouble) << std::endl;
 
+	bool full = false;
+	if (inputDouble == static_cast<int>(inputDouble))
+		full = true;
+
 	// float
-	std::cout << "float: " << static_cast<float>(inputDouble) << "f" << std::endl;
+	std::cout << "float: " << static_cast<float>(inputDouble);
+
+	if (full == true)
+		std::cout << ".0f" << std::endl;
+	else
+		std::cout << "f" << std::endl;
+
 	// double
-	std::cout << "double: " << inputDouble << std::endl;
+	std::cout << "double: " << inputDouble;
+
+	if (full == true)
+		std::cout << ".0" << std::endl;
+	else
+		std::cout << std::endl;
 }
 
 
@@ -153,23 +169,40 @@ static void	convertFloat(const std::string& input)
 		std::cout << "char: " << inputChar << std::endl;
 
 	// int
-	if (inputFloat > std::numeric_limits<int>::max() || inputFloat < std::numeric_limits<int>::min())
+	if (inputFloat > static_cast<float>(std::numeric_limits<int>::max())
+		|| inputFloat < static_cast<float>(std::numeric_limits<int>::min()))
 		std::cout << "int: impossible" << std::endl;
 	else
 		std::cout << "int: " << static_cast<int>(inputFloat) << std::endl;
 
+	bool full = false;
+	if (inputFloat == static_cast<int>(inputFloat))
+		full = true;
+
 	// float
-	std::cout << "float: " << inputFloat << "f" << std::endl;
+	std::cout << "float: " << static_cast<float>(inputFloat);
+
+	if (full == true)
+		std::cout << ".0f" << std::endl;
+	else
+		std::cout << "f" << std::endl;
+
 	// double
-	std::cout << "double: " << static_cast<double>(inputFloat) << std::endl;
+	std::cout << "double: " << inputFloat;
+
+	if (full == true)
+		std::cout << ".0" << std::endl;
+	else
+		std::cout << std::endl;
 }
 
 static void	convertElse(const std::string& input)
 {
 	int	i = 0;
 
-	while (input[i] == ' ')
-		i++;
+	// while (input[i] == ' ')
+	// 	i++;
+
 	if (input[i] == '+' || input[i] == '-')
 		i++;
 	if (!std::isdigit(input[i]))
@@ -185,13 +218,13 @@ static void	convertElse(const std::string& input)
 	{
 		if (input[i] == '.')
 		{
-			if (dot == false)
-				dot = true;
-			else
+			if (dot == true || i == (inputSize - 1)
+				|| (i == (inputSize - 2) && input[i + 1] == 'f'))
 			{
 				convertError();
 				return;
 			}
+			dot = true;
 		}
 		else if (input[i] == 'f' && i == (inputSize - 1))
 		{

@@ -6,14 +6,14 @@
 #    By: niroy <niroy@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/11 22:11:33 by jramiro           #+#    #+#              #
-#    Updated: 2025/09/14 20:12:22 by jramiro          ###   ########.fr        #
+#    Updated: 2025/09/15 19:57:47 by jramiro          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = scalar
 
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -Wshadow -std=c++98
+CFLAGS = -Wall -Wextra -Werror -Wshadow -std=c++98 -g3
 INCS = -I./hdrs
 
 SRCS = srcs/main.cpp \
