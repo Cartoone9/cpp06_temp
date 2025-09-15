@@ -6,11 +6,11 @@
 #    By: niroy <niroy@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/11 22:11:33 by jramiro           #+#    #+#              #
-#    Updated: 2025/09/15 20:49:19 by jramiro          ###   ########.fr        #
+#    Updated: 2025/09/15 20:49:30 by jramiro          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = scalar
+NAME = serializer
 
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -Wshadow -std=c++98
@@ -18,7 +18,6 @@ INCS = -I./hdrs
 
 SRCS = srcs/main.cpp \
 	   \
-	   srcs/ScalarConverter.class.cpp \
 
 O_DIR = .objs
 OBJS = $(SRCS:%.cpp=$(O_DIR)/%.o)
